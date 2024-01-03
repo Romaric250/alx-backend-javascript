@@ -1,0 +1,61 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "alx backend projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-jest": "^27.4.5",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^26.0.1",
+    "jest": "^27.4.5"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": false,
+      "es6": true,
+      "jest": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:jest/all"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "jest"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-shadow": "off",
+      "no-restricted-syntax": [
+        "error",
+        "LabeledStatement",
+        "WithStatement"
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.js"
+        ],
+        "excludedFiles": "babel.config.js"
+      }
+    ]
+  }
+}
