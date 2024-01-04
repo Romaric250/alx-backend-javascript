@@ -1,5 +1,1 @@
-# alx-backend-javascript
-Alx Javascript Backend
-
-## ES6 Basics
-
+Javascript Backend projects
