@@ -52,7 +52,7 @@ app.get('/students', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('server running at http://');
+
 });
 
 module.exports = app;
