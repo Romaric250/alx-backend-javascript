@@ -1,3 +1,3 @@
-const displayMessage = require('./0-console.js')
+const displayMessage = require('./0-console.js');
 
-displayMessage("hello quokka!")
+displayMessage('hello quokka!');
