@@ -1,5 +1,6 @@
-const http = require("http");
-const fs = require("fs");
+const http = require('http');
+const fs = require('fs');
+
 const port = 1245;
 const host = '127.0.0.1';
 
@@ -43,7 +44,7 @@ const app = http.createServer((req, res) => {
   }
   if (req.url === '/students') {
     res.write('This is the list of our students\n');
-    countStudents("database.csv")
+    countStudents(process.argv[2].toString())
       .then((data) => {
         res.write(data);
         res.end();
@@ -56,7 +57,7 @@ const app = http.createServer((req, res) => {
 });
 
 app.listen(port, host, () => {
-  console.log(`Server running at http://${host}:${port}/`);
+
 });
 
 module.exports = app;
