@@ -9,7 +9,7 @@ const calculateNumber = (type,a, b) => {
       return num1 - num2;
     }
     if (type === 'DIVIDE') {
-      if (rounded_b === 0) {
+      if (num2 === 0) {
         return 'Error';
       }
       return num1 / num2;
