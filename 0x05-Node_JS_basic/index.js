@@ -1,18 +1,23 @@
-const express = require('express');
+const express = require("express")
 
-MyApp = express();
 
-const ports = 1245;
+const app = express()
 
-MyApp.get('/', (req, res) => {
-  res.send('hello here');
-});
+app.route('/', (req, res) => {
+  res.statusCode = 200
+  console.log(req.url)
+  res.end("ended here")
+})
+app.route("/", (request, response) => {
+  console.log(req.url)
+  response.statusCode = 200
+  response.write("Hey there from express")
+  response.end()
+})
 
-MyApp.get('/test', (re, r_s) => {
-  const message = 'hello here is a test';
+app.listen(1235, () => {
+  console.log("server running on local host")
+})
 
-  console.log(re);
-  r_s.send(message);
-});
 
-MyApp.listen(ports, () => { });
+module.exports = app
