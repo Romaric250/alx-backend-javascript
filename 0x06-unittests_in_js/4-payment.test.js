@@ -1,30 +1,35 @@
-
+/* eslint-disable jest/expect-expect */
+/* eslint-disable jest/no-hooks */
+/* eslint-disable jest/valid-expect */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable jest/prefer-expect-assertions */
+/* eslint-disable prefer-destructuring */
+const sinon = require('sinon');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./4-payment');
-const sinon = require('sinon');
 
 describe('sendPaymentRequestToApi', () => {
-  let test;
+  let stub;
 
   beforeEach(() => {
-    test = sinon.test(Utils, 'calculateNumber').returns(10);
+    stub = sinon.stub(Utils, 'calculateNumber').returns(10);
   });
 
   afterEach(() => {
-    test.restore();
+    stub.restore();
   });
 
   it('sendPaymentRequestToApi uses the calculateNumber method of Utils', () => {
-    const spi = sinon.spy(console, 'log');
+    const spy = sinon.spy(console, 'log');
 
     sendPaymentRequestToApi(100, 20);
 
-    sinon.assert.calledOnce(test);
-    sinon.assert.calledWith(test, 'SUM', 100, 20);
+    sinon.assert.calledOnce(stub);
+    sinon.assert.calledWith(stub, 'SUM', 100, 20);
 
-    sinon.assert.calledOnce(spi);
-    sinon.assert.calledWith(spi, 'The total is: 10');
+    sinon.assert.calledOnce(spy);
+    sinon.assert.calledWith(spy, 'The total is: 10');
 
-    spi.restore();
+    spy.restore();
   });
 });
