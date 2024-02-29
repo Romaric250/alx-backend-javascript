@@ -19,25 +19,10 @@
 //   module.exports = calculateNumber;
 
 
-//   genereate me some sample test case for the above code.
-
-//   when i run the code with mocha i want to see
-
-//   > const calculateNumber = require("./1-calcul.js");
-// > calculateNumber('SUM', 1.4, 4.5)
-// 6
-// > calculateNumber('SUBTRACT', 1.4, 4.5)
-// -4
-// > calculateNumber('DIVIDE', 1.4, 4.5)
-// 0.2
-// > calculateNumber('DIVIDE', 1.4, 0)
-// 'Error'
-
-
 const assert = require('assert');
 const calculateNumber = require('./1-calcul');
 
-describe('#calculateNumber() with type SUM', () => {
+describe('with type SUM', () => {
   it('add 5 and 10', () => {
     assert.equal(calculateNumber('SUM', 5, 10), 15);
   });
@@ -52,7 +37,7 @@ describe('#calculateNumber() with type SUM', () => {
   });
 });
 
-describe('#calculateNumber() with type SUBTRACT', () => {
+describe('with type SUBTRACT', () => {
   it('subtract 1 and 3', () => {
     assert.equal(calculateNumber('SUBTRACT', 1, 3), -2);
   });
@@ -71,7 +56,7 @@ describe('#calculateNumber() with type SUBTRACT', () => {
   
 });
 
-describe('#calculateNumber() with type DIVIDE', () => {
+describe(' with type DIVIDE', () => {
   it('divide 1 and 4', () => {
     assert.equal(calculateNumber('DIVIDE', 1, 4), 0.25);
   });
